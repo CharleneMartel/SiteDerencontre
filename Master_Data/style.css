@@ -60,27 +60,40 @@ body {
     padding-bottom: 10px;
   }
 /*  Footer */
- .footer {
-    background-color: #BCA9F5;
-    padding: 20px 30px 0;
-    border: white;
-    display: inline-flex;
-    width: 100%;
-    position: relative;
-    height: 15%;
+
+  footer {
+    background-color: #333333;
+    padding: 10px 0px;
+    text-align: center;
   }
 
-  .footer-links {
-
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
+  footer ul {
+    list-style: none;
+    margin: 0 auto;
+    display: inline-block;
+    padding-top: 20px;
   }
 
-  .footer-contact {
+  footer ul li {
     float: right;
-    margin-bottom: 150px;
-    justify-content: center;
+  }
 
+  footer ul li a {
+    color: #b1aca1;
+    padding: 10px;
+  }
+
+  footer ul li a:hover {
+    color: #f0f0f0;
+    text-decoration: none;
+  }
+
+  .copyright {
+    background-color: #f0f0f0;
+  }
+
+  .copyright p {
+    font-size: 12px;
+    padding: 15px 0 10px 0;
   }
   
