@@ -3,7 +3,7 @@
     <h2>Insrciption ! </h2>
     <div>
         <small class="text-muted">Si vous avez déjà un compte,
-            <a href="connexion.php">cliquez ici</a>.
+            <a href="Page-connexion.php">cliquez ici</a>.
         </small>
     </div>
     <h4>Sinon veuiller saisir vos informations ci dessous :</h4>
