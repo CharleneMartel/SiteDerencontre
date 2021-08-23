@@ -10,10 +10,11 @@
     <h1 class="">Trouve ton partenaire sportif</h1>
   </div>
   <div>
-    <p>Tu adores un sport mais tu ne toruves jamais personne pour t'accomper, se site ets fait pour toi !</p>
+    <p>Tu adores un sport mais tu ne toruves jamais personne pour t'accomper, se site est fait pour toi !</p>
     <p>Inscris-toi et recherche dès mainteant ton accolyte préféré</p>
   </div>
   <div style="width: 100%;"><img src="img/Home.jpg"></div>
+  <br>
   <?php
   echo "<a class=\"bouton btn\" href=\"Page_ajout.php\" role=\"button\">Inscrivez-vous !</a>";
   ?>
