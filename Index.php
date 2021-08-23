@@ -13,7 +13,7 @@
     <?php
     //if (!isset($_COOKIE['email']))
     {
-      echo "<a class=\"bouton btn\" href=\"ajout.php\" role=\"button\">Inscrivez-vous !</a>";
+      echo "<a class=\"bouton btn\" href=\"Page_ajout.php\" role=\"button\">Inscrivez-vous !</a>";
     }
     // } else
     {
