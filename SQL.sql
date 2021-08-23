@@ -4,6 +4,8 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+--------------------------------------------------------------------------------------------------------
+
 -- Table utilisateurs
 CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
@@ -24,23 +26,7 @@ ALTER TABLE `utilisateurs` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`emai
 --Auto 
 ALTER TABLE `utilisateurs` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16
 
---Table NiveauSportif
-CREATE TABLE `niveaux_sportifs` (
-  `id` int(11) NOT NULL,
-  `niveau` varchar(20) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT '1970-01-01 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
--- Insérer les données
-INSERT INTO `niveaux_sportifs` (`id`, `niveau`, `created_at`, `updated_at`) VALUES
-(1, 'débutant', '2020-11-08 20:31:48', '1970-01-01 00:00:00'),
-(2, 'confirmé', '2020-11-08 20:31:48', '1970-01-01 00:00:00'),
-(3, 'pro', '2020-11-08 20:32:03', '1970-01-01 00:00:00');
---Clé primaire
-ALTER TABLE `niveaux_sportifs` ADD PRIMARY KEY (`id`)
---Auto 
-ALTER TABLE `niveaux_sportifs` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4
-
+--------------------------------------------------------------------------------------------------------
 
 -- Table sports
 CREATE TABLE `sports` (
@@ -60,6 +46,27 @@ INSERT INTO `sports` (`id`, `nom`, `created_at`, `updated_at`) VALUES
 ALTER TABLE `sports` ADD PRIMARY KEY (`id`)
 --Auto 
 ALTER TABLE `sports` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15
+
+--------------------------------------------------------------------------------------------------------
+
+--Table NiveauSportif
+CREATE TABLE `niveaux_sportifs` (
+  `id` int(11) NOT NULL,
+  `niveau` varchar(20) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT '1970-01-01 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Insérer les données
+INSERT INTO `niveaux_sportifs` (`id`, `niveau`, `created_at`, `updated_at`) VALUES
+(1, 'débutant', '2020-11-08 20:31:48', '1970-01-01 00:00:00'),
+(2, 'confirmé', '2020-11-08 20:31:48', '1970-01-01 00:00:00'),
+(3, 'pro', '2020-11-08 20:32:03', '1970-01-01 00:00:00');
+--Clé primaire
+ALTER TABLE `niveaux_sportifs` ADD PRIMARY KEY (`id`)
+--Auto 
+ALTER TABLE `niveaux_sportifs` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4
+
+
 
 
 
