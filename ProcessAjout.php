@@ -32,7 +32,7 @@ if (!empty($_POST)) {
   if (empty($niveau))
     $err = 1;
 
-  $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`) VALUES (:nom, :prenom, :email, SHA1(:mdp), :ville, :sportPratique, :niveau)");
+  $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`) VALUES (:nom, :prenom, :email, :mdp, :ville, :sportPratique, :niveau)");
   $sql->bindParam(':nom', $nom);
   $sql->bindParam(':prenom', $prenom);
   $sql->bindParam(':email', $email);
