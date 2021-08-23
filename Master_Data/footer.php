@@ -1,6 +1,6 @@
 <style>
   .footer {
-    background-color: #9370DB;
+    background-color: #BCA9F5;
     padding: 20px 30px 0;
     border: white;
     display: inline-flex;
