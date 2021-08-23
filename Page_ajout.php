@@ -8,7 +8,7 @@
     </div>
 
     <h4>Sinon veuiller saisir vos informations ci dessous :</h4>
-    <form class="" method="post" action="process/inscription_process.php" enctype="multipart/form-data">
+    <form class="" method="post" action="Pross/ajout.php" enctype="multipart/form-data">
         <div class="">
             <div>
                 <label name="nom">Nom</label>
@@ -35,9 +35,9 @@
                 <select class="form-control" name="sportPratique">
                     <?php
                     $sql = "SELECT `nom` from sports;";
-                    // foreach ($db->query($sql) as $ligne) {
-                    //    echo "<option>" . str_replace("_", " ", $ligne['nom']) . "</option>";
-                    //}
+                    foreach ($db->query($sql) as $ligne) {
+                        echo "<option>" . str_replace("_", " ", $ligne['nom']) . "</option>";
+                    }
                     ?>
                 </select>
             </div>
@@ -46,9 +46,9 @@
                 <select class="form-control" name="niveau" required>
                     <?php
                     $sql = "SELECT `niveau` from niveaux_sportifs;";
-                    //foreach ($db->query($sql) as $ligne) {
-                    //     echo "<option>" . $ligne['niveau'] . "</option>";
-                    // }
+                    foreach ($db->query($sql) as $ligne) {
+                        echo "<option>" . $ligne['niveau'] . "</option>";
+                    }
                     ?>
                 </select>
             </div>
