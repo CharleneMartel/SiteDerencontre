@@ -7,8 +7,9 @@
   <div style="width: 100%;">
     <h1 class="Titre">Trouve ton partenaire sportif</h1>
   </div>
+  <br>
   <div class="IndexP">
-    <p>Tu adores un sport mais tu ne toruves jamais personne pour t'accomper, se site est fait pour toi !
+    <p>Tu adores un sport mais tu ne trouves jamais personne pour t'accompagner, ce site est fait pour toi !
       Inscris-toi et recherche dès mainteant ton accolyte préféré</p>
     <img class="imgHome" src="img/Home.jpg">
   </div>
