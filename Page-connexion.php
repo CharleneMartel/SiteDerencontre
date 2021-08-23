@@ -1,7 +1,7 @@
 <?php include_once 'Master_Data/header.php' ?>
 <div class="container form">
   <h2>Je me connecte</h2>
-  <form class="bg-light col-5" method="post" action="Connexion/connexion_process.php">
+  <form class="bg-light col-5" method="post" action="Procédures/connexion.php">
     <?php
     if (isset($_GET['msg'])) {
       echo "<div class=\"form-group\">";
