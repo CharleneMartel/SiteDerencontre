@@ -1,5 +1,14 @@
 <?php include_once 'Master_Data/header.php' ?>
+<style>
+  .cardsSports {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
+  .card {
+    margin: 10px;
+  }
+</style>
 <div class="container rounded" id="accueil">
   <div class="row">
     <h1>Rechercher les profils sportifs</h1>
