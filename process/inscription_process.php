@@ -82,7 +82,6 @@ if (!empty($_POST)) {
     }
   } else {
     $msg = "Veuillez-remplir tout les champs";
-    header("Location:../inscription.php?msg=$msg");
+    header("Location:../ajout.php?msg=$msg");
   }
 }
-?>
