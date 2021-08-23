@@ -1,32 +1,48 @@
-<footer class="footer-distributed">
+<style>
+  .footer {
+    background-color: #9370DB;
+    padding: 20px 30px 0;
+    border: solid;
+    display: flex;
+    margin: auto;
+    width: 100%;
+    grid-auto-flow: row;
+  }
 
-  <div class="footer-left">
+  .footer-link a {
+    color: white;
+    text-decoration: none;
+  }
 
-    <h3>Company<span>logo</span></h3>
+  .footer-contact {
+    float: right;
+    margin-bottom: 150px;
 
-    <p class="footer-links">
+  }
+</style>
+<footer class="footer">
+
+  <div class="footer-links">
     <div><a href="/index.php">Home</a></div>
     <div><a href="/recherche.php">Recherche</a></div>
     <div><a href="/compte.php">Mon compte</a></div>
     <div><a href="/Page_ajout.php">Crée un compte</a></div>
     <div><a href="/Page-connexion.php">Se connecter</a></div>
-    <p class="footer-company-name">Company Name © 2021</p>
-
-
   </div>
 
-  <div class="footer-right">
+  <div class="footer-contact">
 
-    <p>Contact Us</p>
+    <div>Contact Us</div>
+    <div>
+      <form action="#" method="post">
 
-    <form action="#" method="post">
+        <input type="text" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Message"></textarea>
+        <button>Send</button>
 
-      <input type="text" name="email" placeholder="Email">
-      <textarea name="message" placeholder="Message"></textarea>
-      <button>Send</button>
-
-    </form>
-
+      </form>
+    </div>
   </div>
 
+  <div>Company Name © 2021</div>
 </footer>
