@@ -39,14 +39,14 @@ require 'database.php';
           <?php
           if (!isset($_COOKIE['email'])) {
 
-            echo "<a class=\"btn bouton bouton-login my-2 my-sm-0\" role=\"button\" href=\"connexion.php\">Se connecter</a>";
+            echo "<a class=\"btn bouton bouton-login my-2 my-sm-0\" role=\"button\" href=\"./Page-connexion.php\">Se connecter</a>";
           } else {
             echo "<ul class=\"navbar-nav\">";
             echo "<li class=\"nav-item\">";
             echo "<a class=\"nav-link\" href=\"compte.php\">Mon compte</a>";
             echo "</li>";
             echo "<li class=\"nav-item\">";
-            echo "<a style=\"color: #FA347F;\"class=\"nav-link\" href=\"./process/deconnexion.php\">Me déconnecter</a>";
+            echo "<a style=\"color: #FA347F;\"class=\"nav-link\" href=\"./Pross/deconnexion.php\">Me déconnecter</a>";
             echo "</li>";
             echo "</ul>";
           }
