@@ -1,21 +1,28 @@
 /*  Index */
 .Index {
     padding: 10px 30px !important;
-    text-align: center;
+    
+  }
+  .IndexP{
+display: flex;
+  }
+  .IndexP p{
+text-align: center;
+margin: 150px;
+  }
+    .IndexBtn{
+text-align: center;
   }
 
-  .Titre {
+.Titre {
     background: linear-gradient(to right, #a83b08, rgb(248, 187, 131));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
+    text-align: center;
   }
-
   .imgHome {
-    width: 25px;
-  }
-
- 
+      width: 40%;
+    }
 .bouton {
   background-color: #F5D0A9;
   color: #fff;
@@ -52,5 +59,28 @@ body {
   .row{
     padding-bottom: 10px;
   }
+/*  Footer */
+ .footer {
+    background-color: #BCA9F5;
+    padding: 20px 30px 0;
+    border: white;
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+    height: 15%;
+  }
 
+  .footer-links {
+
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+  }
+
+  .footer-contact {
+    float: right;
+    margin-bottom: 150px;
+    justify-content: center;
+
+  }
   
