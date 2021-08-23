@@ -58,7 +58,8 @@
             <div>
                 <input name="nouveauSport" class="form-control">
             </div>
-            <div>
+            <br>
+            <div style="text-align: center;">
                 <button type="submit" class="btn bouton">S'inscrire</button>
             </div>
 
