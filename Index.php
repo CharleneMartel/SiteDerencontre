@@ -7,20 +7,15 @@
   //   echo "</div>";
   // }
   ?>
+
+
   <div class="row" id="jumbo">
-    <h1 class="">Faites des rencontres</h1>
-    <p class=""></p>
+    <h1 class="">Trouve ton partenaire sportif</h1>
+    <div style="width: 100%;"><img src="img/Home.jpg"></div>
     <?php
-    //if (!isset($_COOKIE['email']))
-    {
-      echo "<a class=\"bouton btn\" href=\"Page_ajout.php\" role=\"button\">Inscrivez-vous !</a>";
-    }
-    // } else
-    {
-      echo "<a class=\"bouton btn\" href=\"recherche.php\" role=\"button\">Rechercher</a>";
-    }
+    echo "<a class=\"bouton btn\" href=\"Page_ajout.php\" role=\"button\">Inscrivez-vous !</a>";
     ?>
   </div>
 </div>
 
-<?php include_once 'includes/footer.php' ?>
+<?php include_once 'Master_Data/footer.php' ?>
