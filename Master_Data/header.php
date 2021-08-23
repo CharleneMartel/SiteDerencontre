@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 require 'database.php';
 ?>
 
@@ -8,7 +7,7 @@ require 'database.php';
 <html>
 
 <head>
-  <title>Meeting for athletes</title>
+  <title>Rencontre pour sportif</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="Master_Data/style.css">
 </head>
@@ -16,7 +15,7 @@ require 'database.php';
 <body>
   <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="index.php">Meeting for athletes</a>
+      <a class="navbar-brand" href="index.php">Accueil</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +28,7 @@ require 'database.php';
         if (isset($_COOKIE['email'])) {
           echo 'recherche.php';
         } else {
-          echo 'ajout.php';
+          echo 'Page_ajout.php';
         }
         ?>
         ">Rechercher</a>
