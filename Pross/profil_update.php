@@ -1,5 +1,5 @@
 <?php
-require_once '../includes/database.php';
+require_once '../Master_Data/database.php';
 
 if (!empty($_POST)) {
   $nom = $_POST['nom'];
@@ -40,7 +40,7 @@ if (!empty($_POST)) {
     $sql->bindParam(':email', $email);
     $sql->bindParam(':mdp', $mdp);
     $sql->bindParam(':ville', $ville);
-    
+
     if (empty($sportPratique) && !empty($nouveauSport)) {
       $sportQuery = $db->prepare("SELECT * FROM `sports` WHERE `nom`= :nom");
       $sportQuery->bindParam(':nom', $nouveauSport);
@@ -52,13 +52,13 @@ if (!empty($_POST)) {
         $sqlSport->bindParam(':nouveauSport', $nouveauSport);
         $sqlSport->execute();
       }
-        $sql->bindParam(':sportPratique', $nouveauSport);
-      } else {
-        $sql->bindParam(':sportPratique', $sportPratique);
-      }
-    
+      $sql->bindParam(':sportPratique', $nouveauSport);
+    } else {
+      $sql->bindParam(':sportPratique', $sportPratique);
+    }
+
     $sql->bindParam(':niveau', $niveau);
-    
+
     if ($sql->execute()) {
       header("Location:../profil.php");
     } else {
