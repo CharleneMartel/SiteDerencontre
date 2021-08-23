@@ -1,29 +1,3 @@
-<style>
-  .footer {
-    background-color: #BCA9F5;
-    padding: 20px 30px 0;
-    border: white;
-    display: inline-flex;
-    width: 100%;
-    position: relative;
-    height: 15%;
-  }
-
-  .footer-links {
-
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-  }
-
-  .footer-contact {
-    float: right;
-    margin-bottom: 150px;
-    justify-content: center;
-
-  }
-</style>
-
 <body>
   <footer class="footer">
 
