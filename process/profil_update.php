@@ -58,11 +58,7 @@ if (!empty($_POST)) {
       }
     
     $sql->bindParam(':niveau', $niveau);
-
-    if (!empty($_FILES['avatar'])) {
-      $uploadDir = '../uploads/';
-      move_uploaded_file($_FILES['avatar']['tmp_name'],$uploadDir.$avatar);
-    }
+    
     if ($sql->execute()) {
       header("Location:../profil.php");
     } else {
@@ -73,4 +69,3 @@ if (!empty($_POST)) {
     // header("Location:../profil.php?msg=$msg");
   }
 }
-?>
