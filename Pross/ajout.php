@@ -64,5 +64,5 @@ if (!empty($_POST)) {
   }
 } else {
   $msg = "Veuillez-remplir tout les champs";
-  header("Location:../ajout.php?msg=$msg");
+  header("Location:../Page_ajout.php?msg=$msg");
 }
