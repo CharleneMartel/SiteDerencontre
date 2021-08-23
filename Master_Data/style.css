@@ -1,16 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+/*  Index */
+.Index {
+    padding: 10px 30px !important;
+    text-align: center;
+  }
 
-form {
-  padding: 10px;
-  border-radius: 10px;
-  
-}
+  .Titre {
+    background: linear-gradient(to right, #a83b08, rgb(248, 187, 131));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
+  }
+
+  .imgHome {
+    width: 25px;
+  }
+
+ 
 .bouton {
-  background-color: #fba88d;
+  background-color: #F5D0A9;
   color: #fff;
 }
-
 .bouton:hover {
   background-color: #fba88d;
   color: #fff;
@@ -21,51 +30,25 @@ form {
 }
 
 nav {
-  /* background-image: linear-gradient(to right, #0ba360 0%, #3cba92 100%); */
   background-color: #fff;
 }
 
 body {
-  background-image: linear-gradient(62.5deg, #ffecd2 0%, #fcb69f 100%);
+  background-image: linear-gradient(62.5deg, #ffecd2 0%, #E3CEF6 100%);
   background-attachment: fixed;
   font-family: 'Open Sans', sans-serif;
 }
  
-.cardsSports {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.card {
-  margin: 10px;
-}
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
 }
-.footer-distributed {
-    background: #444;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    width: 100%;
-    font: bold 16px sans-serif;
-    text-align: left;
-    padding: 50px 60px 40px;
-    overflow: hidden;
-  }
 
-  section {
-    width: 100%;
-    display: inline-block;
-    background: #ccc;
-    height: 60vh;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: underline;
-  }
   .row{
     padding-bottom: 10px;
   }
