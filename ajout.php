@@ -3,13 +3,6 @@
     <h2>Je m'inscris</h2>
     <form class="bg-light col-5" method="post" action="process/inscription_process.php" enctype="multipart/form-data">
         <div class="row">
-            <?php
-            if (isset($_GET['msg'])) {
-                echo "<div class=\"form-group\">";
-                echo "<p style=\"color: red;\">" . $_GET['msg'] . "</p>";
-                echo "</div>";
-            }
-            ?>
             <div class="form-group col-6">
                 <label name="nom">Nom</label>
                 <input name="nom" class="form-control" placeholder="Dupont" required>
@@ -31,9 +24,8 @@
                 <input name="ville" class="form-control" placeholder="Paris" required>
             </div>
             <div class="form-group col-6">
-                <label name="sport">Sport pratiquÃ©</label>
+                <label name="sport">Sport pratiqué</label>
                 <select class="form-control" name="sportPratique">
-                    <option></option>
                     <?php
                     $sql = "SELECT `nom` from sports;";
                     foreach ($db->query($sql) as $ligne) {
@@ -42,14 +34,14 @@
                     ?>
                 </select>
             </div>
-            <div class="form-group col-6">
+            <!--<div class="form-group col-6">
                 <label name="niveau">Niveau</label>
                 <select class="form-control" name="niveau" required>
                     <?php
-                    $sql = "SELECT `niveau` from niveaux_sportifs;";
-                    foreach ($db->query($sql) as $ligne) {
-                        echo "<option>" . $ligne['niveau'] . "</option>";
-                    }
+                    //$sql = "SELECT `niveau` from niveaux_sportifs;";
+                    //foreach ($db->query($sql) as $ligne) {
+                    //     echo "<option>" . $ligne['niveau'] . "</option>";
+                    // }
                     ?>
 
                 </select>
@@ -58,7 +50,7 @@
                 <label name="nouveauSport">Ajouter un sport</label>
                 <small class="text-muted">Si votre sport pratiquÃ© n'est pas indiquÃ©</small>
                 <input name="nouveauSport" class="form-control">
-            </div>
+            </div>-->
             <div class="form-group col-12">
                 <label name="avatar">Avatar</label>
                 <input name="avatar" class="form-control-file" type="file" accept=".png,.jpg,.jpeg,.gif,.svg,.webp">
