@@ -11,7 +11,7 @@
 </style>
 <div class="container rounded" id="accueil">
   <div class="row">
-    <h1>Rechercher les profils sportifs</h1>
+    <h1 class="Titre">Rechercher les profils sportifs</h1>
   </div>
   <div class="row">
     <div class="col-3 h-auto border rounded p-3">
