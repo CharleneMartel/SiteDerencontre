@@ -2,13 +2,13 @@
 <div class="container form">
   <h2>Je me connecte</h2>
   <form class="bg-light col-5" method="post" action="process/connexion_process.php">
-  <?php
-    if(isset($_GET['msg'])) {
+    <?php
+    if (isset($_GET['msg'])) {
       echo "<div class=\"form-group\">";
       echo "<p style=\"color: red;\">" . $_GET['msg'] . "</p>";
       echo "</div>";
     }
-  ?>
+    ?>
 
     <div class="form-group">
       <label name="email">Adresse e-mail</label>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       <small class="text-muted">Si vous n'avez pas déjà un compte,
-        <a href="inscription.php">cliquez ici</a>.
+        <a href="ajout.php">cliquez ici</a>.
       </small>
     </div>
   </form>
