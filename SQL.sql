@@ -22,6 +22,8 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --Index
 ALTER TABLE `utilisateurs` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `email` (`email`)
+ALTER TABLE `utilisateurs` ADD CONSTRAINT `fk_niveau` FOREIGN KEY (`niveau`) REFERENCES `niveaux_sportifs`(`niveau`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `utilisateurs` DROP FOREIGN KEY `fk_niveau`; ALTER TABLE `utilisateurs` ADD CONSTRAINT `fk_utilisateurs_sports` FOREIGN KEY (`sport_pratique`) REFERENCES `sports`(`nom`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 --Auto 
 ALTER TABLE `utilisateurs` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16
 
