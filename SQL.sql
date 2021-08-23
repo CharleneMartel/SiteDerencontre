@@ -16,7 +16,6 @@ CREATE TABLE `utilisateurs` (
   `mot_de_passe` varchar(500) NOT NULL,
   `sport_pratique` varchar(20) NOT NULL,
   `niveau` varchar(20) NOT NULL,
-  `avatar` varchar(500) NOT NULL DEFAULT 'user.png',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT '1970-01-01 00:00:00',
   `last_login` datetime NOT NULL DEFAULT '1970-01-01 00:00:00'
