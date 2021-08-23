@@ -6,7 +6,6 @@ error_reporting(E_ALL);
 require_once "../includes/database.php";
 
 
-
 if (!empty($_POST)) {
   $nom = $_POST['nom'];
   $prenom = $_POST['prenom'];
@@ -16,12 +15,6 @@ if (!empty($_POST)) {
   $sportPratique = $_POST['sportPratique'];
   $niveau = $_POST['niveau'];
   $nouveauSport = $_POST['nouveauSport'];
-
-  if(empty($_FILES['avatar'])){
-    $avatar = " ";
-  } else{
-    $avatar = basename($_FILES['avatar']['name']);
-  }  
 
   $err = 0;
   if (empty($nom))
@@ -39,38 +32,37 @@ if (!empty($_POST)) {
   if (empty($niveau))
     $err = 1;
 
-    $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`) VALUES (:nom, :prenom, :email, SHA1(:mdp), :ville, :sportPratique, :niveau)");
-    $sql->bindParam(':nom', $nom);
-    $sql->bindParam(':prenom', $prenom);
-    $sql->bindParam(':email', $email);
-    $sql->bindParam(':mdp', $mdp);
-    $sql->bindParam(':ville', $ville);
-    
-    if (empty($sportPratique) && !empty($nouveauSport)) {
-      $sportQuery = $db->prepare("SELECT * FROM `sports` WHERE `nom`= :nom");
-      $sportQuery->bindParam(':nom', $nouveauSport);
-      $sportQuery->execute();
-      $count = $sportQuery->rowCount();
+  $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`) VALUES (:nom, :prenom, :email, SHA1(:mdp), :ville, :sportPratique, :niveau)");
+  $sql->bindParam(':nom', $nom);
+  $sql->bindParam(':prenom', $prenom);
+  $sql->bindParam(':email', $email);
+  $sql->bindParam(':mdp', $mdp);
+  $sql->bindParam(':ville', $ville);
 
-      if ($count == 0) {
-        $sqlSport = $db->prepare("INSERT INTO `sports` (`nom`) VALUES (:nouveauSport)");
-        $sqlSport->bindParam(':nouveauSport', $nouveauSport);
-        $sqlSport->execute();
-      }
-        $sql->bindParam(':sportPratique', $nouveauSport);
-      } else {
-        $sql->bindParam(':sportPratique', $sportPratique);
-      }
-    
-    $sql->bindParam(':niveau', $niveau);
+  if (empty($sportPratique) && !empty($nouveauSport)) {
+    $sportQuery = $db->prepare("SELECT * FROM `sports` WHERE `nom`= :nom");
+    $sportQuery->bindParam(':nom', $nouveauSport);
+    $sportQuery->execute();
+    $count = $sportQuery->rowCount();
 
-    if ($sql->execute()) {
-      header("Location:../index.php");
-    } else {
-      exit('Erreur bdd');
+    if ($count == 0) {
+      $sqlSport = $db->prepare("INSERT INTO `sports` (`nom`) VALUES (:nouveauSport)");
+      $sqlSport->bindParam(':nouveauSport', $nouveauSport);
+      $sqlSport->execute();
     }
+    $sql->bindParam(':sportPratique', $nouveauSport);
   } else {
-    $msg = "Veuillez-remplir tout les champs";
-    header("Location:../ajout.php?msg=$msg");
+    $sql->bindParam(':sportPratique', $sportPratique);
   }
+
+  $sql->bindParam(':niveau', $niveau);
+
+  if ($sql->execute()) {
+    header("Location:../index.php");
+  } else {
+    exit('Erreur bdd');
+  }
+} else {
+  $msg = "Veuillez-remplir tout les champs";
+  header("Location:../ajout.php?msg=$msg");
 }
