@@ -1,2 +1,2 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=php_sport;charset=utf8', 'root', 'root');
+$db = new PDO('mysql:host=localhost;dbname=bdsitederencontre;charset=utf8', 'root', '');
