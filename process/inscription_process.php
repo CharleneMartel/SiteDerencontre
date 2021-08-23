@@ -38,20 +38,13 @@ if (!empty($_POST)) {
     $err = 1;
   if (empty($niveau))
     $err = 1;
-  if ($err == 0) {
-    $avatar = str_replace(" ", "", $avatar);
-    if(empty($_FILES['avatar'])){
-      $avatar = "user.png";
-    }
-    echo $avatar;
 
-    $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`, `avatar`) VALUES (:nom, :prenom, :email, SHA1(:mdp), :ville, :sportPratique, :niveau, :avatar)");
+    $sql = $db->prepare("INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `mot_de_passe`, `ville`, `sport_pratique`, `niveau`) VALUES (:nom, :prenom, :email, SHA1(:mdp), :ville, :sportPratique, :niveau)");
     $sql->bindParam(':nom', $nom);
     $sql->bindParam(':prenom', $prenom);
     $sql->bindParam(':email', $email);
     $sql->bindParam(':mdp', $mdp);
     $sql->bindParam(':ville', $ville);
-    $sql->bindParam(':avatar', $avatar);
     
     if (empty($sportPratique) && !empty($nouveauSport)) {
       $sportQuery = $db->prepare("SELECT * FROM `sports` WHERE `nom`= :nom");
@@ -71,10 +64,6 @@ if (!empty($_POST)) {
     
     $sql->bindParam(':niveau', $niveau);
 
-    if (!empty($_FILES['avatar'])) {
-      $uploadDir = '../uploads/';
-      move_uploaded_file($_FILES['avatar']['tmp_name'],$uploadDir.$avatar);
-    }
     if ($sql->execute()) {
       header("Location:../index.php");
     } else {
