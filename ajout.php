@@ -52,10 +52,6 @@
                 <input name="nouveauSport" class="form-control">
             </div>-->
             <div class="form-group col-12">
-                <label name="avatar">Avatar</label>
-                <input name="avatar" class="form-control-file" type="file" accept=".png,.jpg,.jpeg,.gif,.svg,.webp">
-            </div>
-            <div class="form-group col-12">
                 <button type="submit" class="btn bouton">S'inscrire</button>
             </div>
             <div class="form-group">
