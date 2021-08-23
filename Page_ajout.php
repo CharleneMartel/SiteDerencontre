@@ -6,6 +6,7 @@
             <a href="Page-connexion.php">cliquez ici</a>.
         </small>
     </div>
+
     <h4>Sinon veuiller saisir vos informations ci dessous :</h4>
     <form class="" method="post" action="process/inscription_process.php" enctype="multipart/form-data">
         <div class="">
