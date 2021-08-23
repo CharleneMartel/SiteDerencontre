@@ -42,7 +42,4 @@ Permet à l’utilisateur identifié de modifier ses informations et aussi de ch
 ![Profil](./img/profil.png)
 
 # Axes d'amélioration
-- Listes des sports sur la page d'accueil
 - Récupération des informations utilisateurs sur la page de profil afin d'éviter de tout réécrire
-- Un filtre manquant dans la recherche
-- MVC
