@@ -1,7 +1,7 @@
 <?php include_once 'Master_Data/header.php' ?>
 <div class="container form">
   <h2 class="Titre">Changer mes informations</h2>
-  <form class="bg-light col-5" method="post" action="process/profil_update.php" enctype="multipart/form-data">
+  <form class="bg-light col-5" method="post" action="Pross/profil_update.php" enctype="multipart/form-data">
     <div class="row">
       <div class="form-group col-6">
         <label name="nom">Nom</label>
