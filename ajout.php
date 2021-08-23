@@ -1,6 +1,6 @@
-<?php include_once 'includes/header.php' ?>
+<?php include_once 'Master_Data/header.php' ?>
 <div class="container form">
-    <h2>Bienvenue ! </h2>
+    <h2>Insrciption ! </h2>
     <div>
         <small class="text-muted">Si vous avez déjà un compte,
             <a href="connexion.php">cliquez ici</a>.
@@ -65,4 +65,4 @@
 
     </form>
 </div>
-<?php include_once 'Data/footer.php' ?>
+<?php include_once 'Master_Data/footer.php' ?>
