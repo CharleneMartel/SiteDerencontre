@@ -42,9 +42,6 @@ require 'database.php';
           } else {
             echo "<ul class=\"navbar-nav\">";
             echo "<li class=\"nav-item\">";
-            echo "<a class=\"nav-link\" href=\"compte.php\">Mon compte</a>";
-            echo "</li>";
-            echo "<li class=\"nav-item\">";
             echo "<a style=\"color: #FA347F;\"class=\"nav-link\" href=\"./Pross/deconnexion.php\">Me déconnecter</a>";
             echo "</li>";
             echo "</ul>";
