@@ -4,7 +4,7 @@ $nouveauSport = $_POST['nouveauSport'];
 
 //On insère les données reçues
 $sql = $db->prepare("
-            UPDATE `utilisateurs` SET  `sport_pratique` = :nouveauSport,) WHERE `id` = $resultat");
+            UPDATE `utilisateurs` SET  `sport_pratique` = :nouveauSport,) ");
 $sql->bindParam(':nouveauSport', $nouveauSport);
 $sql->execute();
 
