@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Master_Data/style.css" />
 </head>
 <?php include_once 'Master_Data/header.php' ?>
 
@@ -43,8 +43,8 @@
     <div style="text-align: center;">
       <button type="submit" class="btn bouton">Ajouter le sport</button>
       <?php
-      if (isset($_POST['envoie'])) {
-        $req_sport = 'INSERT INTO `sports` (`id`, `nom`) VALUES (NULL, "' . $_POST['nouveauSport'] . '")';
+      if (isset($_POST['ajout'])) {
+        $req_sport = 'INSERT INTO `sports` (`id`, `nom`) VALUES (NULL, "' . $_POST['nouveauSport'] . "')";
         if ($connexion->query($req_sport)) {
           echo "<div> DONNEE INSEREES dans la table sprt </div>";
         }
