@@ -32,26 +32,7 @@
     </select>
   </div>
 
-  <div>
-    <div>
-      <label name="nouveauSport">Ajouter un sport si votre sport n'apparait pas dans la liste</label>
-    </div>
-    <div>
-      <input name="nouveauSport" class="form-control">
-    </div>
-    <br>
-    <div style="text-align: center;">
-      <button type="submit" class="btn bouton">Ajouter le sport</button>
-      <?php
-      if (isset($_POST['ajout'])) {
-        $req_sport = 'INSERT INTO `sports` (`id`, `nom`) VALUES (NULL, "' . $_POST['nouveauSport'] . "')";
-        if ($connexion->query($req_sport)) {
-          echo "<div> DONNEE INSEREES dans la table sprt </div>";
-        }
-      }
-      ?>
-    </div>
-  </div>
+
 
 </div>
 
