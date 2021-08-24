@@ -52,12 +52,7 @@
                     ?>
                 </select>
             </div>
-            <div>
-                <label name="nouveauSport">Ajouter un sport si votre sport n'apparait pas dans la liste</label>
-            </div>
-            <div>
-                <input name="nouveauSport" class="form-control">
-            </div>
+
             <br>
             <div style="text-align: center;">
                 <button type="submit" class="btn bouton">S'inscrire</button>
