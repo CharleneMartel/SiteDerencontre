@@ -1,4 +1,12 @@
 <?php include_once 'Master_Data/header.php' ?>
+<?php include_once 'profil.php' ?>
+<?php
+$sql = "SELECT * from utilisateurs;";
+foreach ($db->query($sql) as $ligne) {
+  echo "<option value=" . $ligne['nom'] . ">" . str_replace("_", " ", $ligne['nom']) . "</option>";
+}
+?>
+
 <div class="container form">
   <h2 class="Titre">Changer mes informations</h2>
   <form class="bg-light col-5" method="post" action="Pross/profil_update.php" enctype="multipart/form-data">
