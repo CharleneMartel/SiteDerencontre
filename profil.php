@@ -38,7 +38,9 @@ if (isset($_COOKIE['email'])) {
     <p> Ville : <input type='text' name='ville' value='<?php echo htmlspecialchars($ville); ?>' />
     <p> Adresse mail : <input type='text' name='email' value='<?php echo htmlspecialchars($email); ?>' />
     <p> Sport : <input type='text' name='sport_pratique' value='<?php echo htmlspecialchars($sport_pratique); ?>' />
-        <button>Mofidier son sport</button>
+    <form method="post" action="Pross/modifierSport.php">
+        <div style="text-align: left;"> <input type="submit" name="nouveauSport" value="Modifier sport" required></div>
+    </form>
     <p> Niveau : <input type='text' name='niveau' value='<?php echo htmlspecialchars($niveau); ?>' />
 
 
@@ -48,7 +50,10 @@ if (isset($_COOKIE['email'])) {
     echo 'souçi  ';
 }
 
+
     ?>
+
+
     <div style="background-color: #E3CEF6;">
         <h4 class="Titre">Ajouter un sport</h4>
         <form method="post" action="Pross/AjoutSport.php">
