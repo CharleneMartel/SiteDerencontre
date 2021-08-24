@@ -1,5 +1,7 @@
 <head>
   <link rel="stylesheet" href="Master_Data/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <?php include_once 'Master_Data/header.php' ?>
 
