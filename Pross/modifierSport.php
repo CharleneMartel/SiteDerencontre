@@ -1,33 +1,50 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+require_once '../includes/database.php';
 
-require_once "../Master_Data/database.php";
-//Valeurs
+if (!empty($_POST)) {
+    $sportPratique = $_POST['sportPratique'];
+    $niveau = $_POST['niveau'];
+    $nouveauSport = $_POST['nouveauSport'];
 
-$sportPratique = $_POST['sportPratique'];
-$niveau = $_POST['niveau'];
-$nouveauSport = $_POST['nouveauSport'];
+    $err = 0;
+    if (empty($sportPratique) && empty($nouveauSport))
+        $err = 1;
+    if (empty($niveau))
+        $err = 1;
+    if ($err == 0) {
 
+        $requete = $db->prepare("SELECT `id` FROM `utilisateurs` WHERE `email` = $email");
+        $requete->execute();
+        $resultat = $requete->fetchAll();
 
-$requete = $db->prepare("SELECT `id` FROM `utilisateurs` WHERE `email` = $email");
-$requete->execute();
-$resultat = $requete->fetchAll();
+        echo $resultat[0];
 
-echo $resultat[0];
+        $sql = $db->prepare("UPDATE `utilisateurs` SET  `sport_pratique` = :sport, `niveau` = :niveau) WHERE `id` = $resultat");
 
+        if (empty($sportPratique) && !empty($nouveauSport)) {
+            $sportQuery = $db->prepare("SELECT * FROM `sports` WHERE `nom`= :nom");
+            $sportQuery->bindParam(':nom', $nouveauSport);
+            $sportQuery->execute();
+            $count = $sportQuery->rowCount();
 
-//On insère les données reçues
-$sql = $db->prepare(
-    "UPDATE `utilisateurs` SET  `sport_pratique` = :sport, `niveau` = :niveau) WHERE `id` = $resultat"
-);
-$sql->bindParam(':sport', $sport);
-$sql->execute();
+            if ($count == 0) {
+                $sqlSport = $db->prepare("INSERT INTO `sports` (`nom`) VALUES (:nouveauSport)");
+                $sqlSport->bindParam(':nouveauSport', $nouveauSport);
+                $sqlSport->execute();
+            }
+            $sql->bindParam(':sportPratique', $nouveauSport);
+        } else {
+            $sql->bindParam(':sportPratique', $sportPratique);
+        }
 
-//On renvoie l'utilisateur vers la page de remerciement
-if ($sql->execute()) {
-    header("Location:../profil.php");
-} else {
-    exit('Erreur');
+        $sql->bindParam(':niveau', $niveau);
+        if ($sql->execute()) {
+            header("Location:../profil.php");
+        } else {
+            exit('Erreur bdd');
+        }
+    } else {
+        $msg = "Veuillez-remplir tout les champs";
+        // header("Location:../profil.php?msg=$msg");
+    }
 }
