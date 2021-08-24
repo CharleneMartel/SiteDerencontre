@@ -19,6 +19,18 @@
     echo "<a class=\"bouton btn\" href=\"Page_ajout.php\" role=\"button\">Inscrivez-vous !</a>";
     ?>
   </div>
+  <div class="form-group">
+    <label for="sport">Sport existant :</label>
+    <select class="form-control col-12" name="sport">
+      <option value="">Tous</option>
+      <?php
+      $sql = "SELECT `nom` from sports;";
+      foreach ($db->query($sql) as $ligne) {
+        echo "<option value=" . $ligne['nom'] . ">" . str_replace("_", " ", $ligne['nom']) . "</option>";
+      }
+      ?>
+    </select>
+  </div>
 </div>
 </div>
 
