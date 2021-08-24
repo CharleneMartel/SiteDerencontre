@@ -33,7 +33,7 @@
 <div class="copyright">
   <div class="container">
     <div class="row text-center">
-      <p>Copyright © 2021 All rights reserved</p>
+      <p>Copyright © 2021 Charlène MARTEL</p>
     </div>
   </div>
 </div>
