@@ -39,6 +39,15 @@ if (isset($_COOKIE['email'])) {
     <p> Adresse mail : <input type='text' name='email' value='<?php echo htmlspecialchars($email); ?>' />
     <p> Sport : <input type='text' name='sport_pratique' value='<?php echo htmlspecialchars($sport_pratique); ?>' />
     <form method="post" action="Pross/modifierSport.php">
+        <select class="form-control col-12" name="sport">
+            <option value="">Tous</option>
+            <?php
+            $sql = "SELECT `nom` from sports;";
+            foreach ($db->query($sql) as $ligne) {
+                echo "<option value=" . $ligne['nom'] . ">" . str_replace("_", " ", $ligne['nom']) . "</option>";
+            }
+            ?>
+        </select>
         <div style="text-align: left;"> <input type="submit" name="nouveauSport" value="Modifier sport" required></div>
     </form>
     <p> Niveau : <input type='text' name='niveau' value='<?php echo htmlspecialchars($niveau); ?>' />
