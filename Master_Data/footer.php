@@ -1,6 +1,3 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
 <footer style="margin-top:20px;">
   <h4 style="color: white;">Plan du site</h4>
   <div class="menu" style="border-top:1px solid grey;">
@@ -29,7 +26,6 @@
   </div>
 
 </footer>
-
 <div class="copyright">
   <div class="container">
     <div class="row text-center">
