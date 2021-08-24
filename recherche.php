@@ -9,7 +9,7 @@
     margin: 10px;
   }
 </style>
-<div class="container rounded" id="accueil">
+<div class="container rounded">
   <div class="row">
     <h1 class="Titre">Rechercher les profils sportifs</h1>
   </div>
