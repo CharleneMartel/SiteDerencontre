@@ -39,7 +39,7 @@ if (isset($_COOKIE['email'])) {
     <p> Adresse mail : <input type='text' name='email' value='<?php echo htmlspecialchars($email); ?>' />
     <p> Sport : <input type='text' name='sport_pratique' value='<?php echo htmlspecialchars($sport_pratique); ?>' />
     <form method="post" action="Pross/modifierSport.php">
-        <select class="form-control col-12" name="sport">
+        <select class="form-control col-12" name="nouveauSport">
             <option value="">Tous</option>
             <?php
             $sql = "SELECT `nom` from sports;";
