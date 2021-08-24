@@ -1,54 +1,60 @@
 <?php include_once 'Master_Data/header.php' ?>
 
-
-
-<html lang="fr"> 
-
-<head>    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mon profil</title>
-</head>
-
-<body>
-      <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>
-      <div>Quelques informations sur vous : </div>
-        <ul>
-            <li>Votre id est : <?= $afficher_profil['id'] ?></li>
-              <li>Votre mail est : <?= $afficher_profil['mail'] ?></li>
-              <li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>
-            </ul>
-
-    <div>
-        <label name="nouveauSport">Ajouter un sport si votre sport n'apparait pas dans la liste</label>
-        <input name="nouveauSport" class="form-control">
-        <br>
-        <button type="submit" class="btn bouton">Ajouter le sport</button>
-        <?php
-        if (isset($_POST['ajout'])) {
-            $req_sport = 'INSERT INTO `sports` (`id`, `nom`) VALUES (NULL, "' . $_POST['nouveauSport'] . "')";
-            if ($connexion->query($req_sport)) {
-                echo "<div> DONNEE INSEREES dans la table sprt </div>";
-            }
-        }
-        ?>
-    </div>
-</body>
-
-</html>
+<h3 class="Titre">Informations de votre profil</h3>
 
 <?php
-session_start();
-include('Master_Data/database.php');
-// On récupère les informations de l'utilisateur connecté
-$afficher_profil = $DB->query(
-    "SELECT * 
-    FROM utilisateur 
-    WHERE id = ?",
-    array($_SESSION['id'])
-);
-$afficher_profil = $afficher_profil->fetch();
-?>
+try {
+    $host = 'localhost';
+    $login = 'root';
+    $password = '';
+    $database = 'bdsitederencontre';
+    $options = array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 
-<?php include_once 'Master_Data/footer.php' ?>
+    );
+
+    $bdd = new PDO("mysql:host=$host;dbname=$database", $login, $password, $options);
+
+    $information_profil = $bdd->prepare("SELECT `nom`, `prenom`, `ville`, `email`, `sport_pratique`, `niveau` from `utilisateurs` WHERE email = ?");
+    $information_profil->execute(array($_COOKIE['email']));
+
+    while ($donnees = $information_profil->fetch()) {
+        $nom = htmlspecialchars($donnees['nom']);
+        $prenom = htmlspecialchars($donnees['prenom']);
+        $ville = htmlspecialchars($donnees['ville']);
+        $email = htmlspecialchars($donnees['email']);
+        $sport_pratique = htmlspecialchars($donnees['sport_pratique']);
+        $niveau = htmlspecialchars($donnees['niveau']);
+    }
+    $information_profil->closeCursor();
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+if (isset($_COOKIE['email'])) {
+?>
+    <p> Nom : <input type='text' value='<?php echo htmlspecialchars($nom); ?>' />
+    <p> Prénom : <input type='text' name='prenom' value='<?php echo htmlspecialchars($prenom); ?>' />
+    <p> Ville : <input type='text' name='ville' value='<?php echo htmlspecialchars($ville); ?>' />
+    <p> Adresse mail : <input type='text' name='email' value='<?php echo htmlspecialchars($email); ?>' />
+    <p> Sport : <input type='text' name='sport_pratique' value='<?php echo htmlspecialchars($sport_pratique); ?>' />
+        <button>Mofidier son sport</button>
+    <p> Niveau : <input type='text' name='niveau' value='<?php echo htmlspecialchars($niveau); ?>' />
+
+
+    <?php
+} else {
+
+    echo 'souçi  ';
+}
+
+    ?>
+    <div style="background-color: #E3CEF6;">
+        <h4 class="Titre">Ajouter un sport</h4>
+        <form method="post" action="Pross/AjoutSport.php">
+            <div class="form"> <input name="sport" class="form-control" required></div>
+            <div class="form"> <input type="submit" name="insert" value="Insérer" required></div>
+        </form>
+    </div>
+
+    <?php include_once 'Master_Data/footer.php' ?>
