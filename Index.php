@@ -34,8 +34,4 @@
     </select>
   </div>
 
-
-
-</div>
-
-<?php include_once 'Master_Data/footer.php' ?>
+  <?php include_once 'Master_Data/footer.php' ?>
