@@ -42,6 +42,12 @@ require 'database.php';
           } else {
             echo "<ul class=\"navbar-nav\">";
             echo "<li class=\"nav-item\">";
+            echo "<a style=\"color: #FA347F;\"class=\"nav-link\" href=\"./profil.php\">Mon profil</a>";
+            echo "</li>";
+            echo "</ul>";
+
+            echo "<ul class=\"navbar-nav\">";
+            echo "<li class=\"nav-item\">";
             echo "<a style=\"color: #FA347F;\"class=\"nav-link\" href=\"./Pross/deconnexion.php\">Me déconnecter</a>";
             echo "</li>";
             echo "</ul>";
