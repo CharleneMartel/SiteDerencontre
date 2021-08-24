@@ -84,41 +84,44 @@
 
         foreach ($profils as $ligne) {
           $src = "uploads/";
-          echo "<div class=\"card\" style=\"width: 18rem;\">";
-          if (!empty($ligne['avatar'])) {
-            echo "<div style=\"display:flex; justify-content:center; padding-top: 10px;\">";
-            echo "<img height=\"100px\" width=\"100px\" alt=\"Avatar\" class=\"rounded-circle\" src=" . $src . $ligne['avatar'] . ">";
+          //echo "<div class=\"card\" style=\"width: 18rem;\">";
+          if (!empty($ligne)) {
+            //  echo "<div style=\"display:flex; justify-content:center; padding-top: 10px;\">";
+            // echo "<img height=\"100px\" width=\"100px\" alt=\"Avatar\" class=\"rounded-circle\" src=" . $src . $ligne['avatar'] . ">";
+            //  echo "</div>";
+            // }
+            echo "<div class=\"card-body\">";
+            echo "<h5 class=\"card-title\">" . $ligne['nom'] . " " . $ligne['prenom'] . "</h5>";
+            echo "<ul class=\"list-group list-group-flush\">";
+            echo "<li class=\"list-group-item\">" . $ligne['sport_pratique'] . " - " . $ligne['niveau'] . "</li>";
+            echo "<li class=\"list-group-item\">" . $ligne['ville'] . "</li>";
+            echo "<li class=\"list-group-item\">" . $ligne['email'] . "</li>";
+            echo "</ul>";
             echo "</div>";
           }
-          echo "<div class=\"card-body\">";
-          echo "<h5 class=\"card-title\">" . $ligne['nom'] . " " . $ligne['prenom'] . "</h5>";
-          echo "</div>";
-          echo "<ul class=\"list-group list-group-flush\">";
-          echo "<li class=\"list-group-item\">" . $ligne['sport_pratique'] . " - " . $ligne['niveau'] . "</li>";
-          echo "<li class=\"list-group-item\">" . $ligne['ville'] . "</li>";
-          echo "<li class=\"list-group-item\">" . $ligne['email'] . "</li>";
-          echo "</ul>";
-          echo "</div>";
-        }
-      } else {
-        $sql = "SELECT `nom`, `prenom`, `ville`, `email`, `sport_pratique`, `niveau` from `utilisateurs`";
-        foreach ($db->query($sql) as $ligne) {
-          $src = "uploads/";
-          echo "<div class=\"card\" style=\"width: 18rem;\">";
-          if (!empty($ligne['avatar'])) {
-            echo "<div style=\"display:flex; justify-content:center; padding-top: 10px;\">";
-            echo "<img height=\"100px\" width=\"100px\" alt=\"Avatar\" class=\"rounded-circle\" src=" . $src . $ligne['avatar'] . ">";
-            echo "</div>";
+          // } 
+          else {
+
+            $sql = "SELECT `nom`, `prenom`, `ville`, `email`, `sport_pratique`, `niveau` from `utilisateurs`";
+            foreach ($db->query($sql) as $ligne) {
+              $src = "uploads/";
+              //echo "<div class=\"card\" style=\"width: 18rem;\">";
+              // if (!empty($ligne['avatar'])) {
+              //  echo "<div style=\"display:flex; justify-content:center; padding-top: 10px;\">";
+              //   echo "<img height=\"100px\" width=\"100px\" alt=\"Avatar\" class=\"rounded-circle\" src=" . $src . $ligne['avatar'] . ">";
+              //   echo "</div>";
+              //}
+              // echo "<div class=\"card-body\">";
+              echo "<h5 class=\"card-title\">" . $ligne['nom'] . " " . $ligne['prenom'] . "</h5>";
+              echo "</div>";
+              echo "<ul class=\"list-group list-group-flush\">";
+              echo "<li class=\"list-group-item\">" . $ligne['sport_pratique'] . " - " . $ligne['niveau'] . "</li>";
+              echo "<li class=\"list-group-item\">" . $ligne['ville'] . "</li>";
+              echo "<li class=\"list-group-item\">" . $ligne['email'] . "</li>";
+              echo "</ul>";
+              echo "</div>";
+            }
           }
-          echo "<div class=\"card-body\">";
-          echo "<h5 class=\"card-title\">" . $ligne['nom'] . " " . $ligne['prenom'] . "</h5>";
-          echo "</div>";
-          echo "<ul class=\"list-group list-group-flush\">";
-          echo "<li class=\"list-group-item\">" . $ligne['sport_pratique'] . " - " . $ligne['niveau'] . "</li>";
-          echo "<li class=\"list-group-item\">" . $ligne['ville'] . "</li>";
-          echo "<li class=\"list-group-item\">" . $ligne['email'] . "</li>";
-          echo "</ul>";
-          echo "</div>";
         }
       }
       ?>
